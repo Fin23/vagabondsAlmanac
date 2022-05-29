@@ -3,6 +3,7 @@
 	// import { session } from '$app/stores';
 	import mapboxgl from 'mapbox-gl';
 	import { onMount } from 'svelte';
+	import customWorldMap from './fullMap.jpg';
 	// import image1 from '../../../static/images/cities/fullMap.jpg';
 	// import { mapInfo } from '../../stores/index';
 	// import image2 from '../../../static/favicon.png';
@@ -244,7 +245,7 @@
 	</span>
 	{#if show}
 		<div>
-			<img src={image1} alt="" />
+			<img src={customWorldMap} alt="" />
 		</div>
 	{/if}
 </div>

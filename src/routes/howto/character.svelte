@@ -1,6 +1,6 @@
 <script>
 	// import { createEventDispatcher } from 'svelte';
-
+	import characterPic from './soldier.jpg';
 	let character = {
 		name: 'bill bob',
 		class: 'wizard',
@@ -213,7 +213,7 @@
 	</div>
 	<div class=" w-screen h-[450px] flex relative">
 		<div class=" w-[150px] h-[450px] z-50">
-			<img height="450px" width="150px" src="../../../static/images/npc/soldier.jpg" alt="" />
+			<img height="450px" width="150px" src={characterPic} alt="" />
 		</div>
 		<div class=" w-full h-fit z-50 flex">
 			<div class="boxes">

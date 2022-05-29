@@ -41,13 +41,13 @@
 				<a sveltekit:prefetch href="/locations">Locations</a>
 			</li>
 
-			<li class:active={$page.url.pathname === '/todos'}>
+			<!-- <li class:active={$page.url.pathname === '/todos'}>
 				<a sveltekit:prefetch href="/todos">Todos</a>
-			</li>
+			</li> -->
 
-			<li class:active={$page.url.pathname === '/howto'}>
+			<!-- <li class:active={$page.url.pathname === '/howto'}>
 				<a sveltekit:prefetch href="/howto">howto</a>
-			</li>
+			</li> -->
 
 			<li class:active={$page.url.pathname === '/entergame/[id]'}>
 				<a sveltekit:prefetch href="/entergame/[id]">enter game</a>
