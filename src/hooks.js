@@ -11,8 +11,8 @@ export const getSession = (request) => {
 };
 
 export const handle = async ({ event, resolve }) => {
-	console.log('handle fn ');
-	console.log('event ', event);
+	// console.log('handle fn ');
+	// console.log('event ', event);
 	const cookies = cookie.parse(event.request.headers.cookie || '');
 	event.locals.userid = cookies.userid || uuid();
 
