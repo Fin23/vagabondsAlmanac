@@ -1,7 +1,7 @@
 <script>
 	// import * as _ from 'lodash';
 	// import { session } from '$app/stores';
-	import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+	import mapboxgl from 'mapbox-gl';
 	import { onMount } from 'svelte';
 	// import image1 from '../../../static/images/cities/fullMap.jpg';
 	import { mapInfo } from '../../stores/index';
