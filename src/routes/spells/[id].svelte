@@ -1,14 +1,14 @@
 <script context="module">
-	export async function load({ page }) {
-		const id = page.params.id;
+	export async function load({ params }) {
+		// console.log('url params ', url, params);
+		const id = params.id;
 
-		console.log('id = ', page);
+		// console.log('id = ', page);
 
 		const url = `http://www.dnd5eapi.co/api/spells/${id}`;
 		const res = await fetch(url);
 		const spell = await res.json();
 
-	
 		console.log('spell', spell);
 		return {
 			props: {
@@ -19,8 +19,6 @@
 </script>
 
 <script>
-
-
 	export let spell;
 	let concentration = false;
 	let classes = spell.classes;
@@ -29,7 +27,6 @@
 	if ((spell.concentration = true)) {
 		concentration = true;
 	}
-
 </script>
 
 <div
@@ -102,5 +99,4 @@
 			</div>
 		{/each}
 	{/if}
-
 </div>

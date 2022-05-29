@@ -4,7 +4,7 @@ import adapter from '@sveltejs/adapter-auto';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extension: ['.svelte'],
+	// extension: ['.svelte'],
 	preprocess: [
 		// mdsvex(),
 		// preprocess({
