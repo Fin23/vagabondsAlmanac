@@ -5,7 +5,7 @@
 
 		// console.log('id = ', page);
 
-		const url = `http://www.dnd5eapi.co/api/spells/${id}`;
+		const url = `https://www.dnd5eapi.co/api/spells/${id}`;
 		const res = await fetch(url);
 		const spell = await res.json();
 
