@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import About from '../howto/character.svelte';
 	import { pokemon } from '../../stores/pokestore.js';
 	import PokemanCard from '../../components/pokemanCard.svelte';
