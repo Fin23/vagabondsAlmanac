@@ -76,7 +76,7 @@
 
 	// 41.2797° N, 36.3361° E
 	export let mapData = [];
-	let mapPoints = $mapInfo;
+	// let mapPoints = $mapInfo;
 
 	// const coord = mapPoints[0].geometry.coordinates;
 

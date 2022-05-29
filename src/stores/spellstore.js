@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 export const spells = writable([]);
 
 const fetchSpells = async () => {
-	const url = `http://www.dnd5eapi.co/api/spells`;
+	const url = `https://www.dnd5eapi.co/api/spells`;
 	const res = await fetch(url);
 	const data = await res.json();
 	const loadedSpells = data.results.map((data, index) => {
