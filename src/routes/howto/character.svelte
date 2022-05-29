@@ -1,6 +1,7 @@
 <script>
 	// import { createEventDispatcher } from 'svelte';
 	import characterPic from './soldier.jpg';
+	import { supaCharacter } from '../../stores/index.js';
 	let character = {
 		name: 'bill bob',
 		class: 'wizard',
@@ -150,6 +151,7 @@
 	// 	// 	text: 'Hello!'
 	// 	// });
 	// };
+	console.log('supa base character ', $supaCharacter);
 	function onClick(event) {
 		console.log(event);
 		console.log('character', character);

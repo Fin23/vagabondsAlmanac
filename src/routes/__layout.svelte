@@ -1,6 +1,10 @@
 <script>
+	import { supabase } from '../supabase.js';
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
+
+	supabase;
+	console.log(supabase);
 </script>
 
 <Header />
