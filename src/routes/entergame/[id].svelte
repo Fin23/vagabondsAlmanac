@@ -181,7 +181,7 @@
 	@apply bg-slate-500;
 }
 </style> -->
-<style lang="scss">
+<style>
 	h1 {
 		color: white;
 	}
