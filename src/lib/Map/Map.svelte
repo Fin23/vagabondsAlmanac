@@ -1,11 +1,11 @@
-<script language="ts">
-	import * as _ from 'lodash';
-	import { session } from '$app/stores';
+<script lang="ts">
+	// import * as _ from 'lodash';
+	// import { session } from '$app/stores';
 	import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 	import { onMount } from 'svelte';
-	import image1 from '../../../static/images/cities/fullMap.jpg';
+	// import image1 from '../../../static/images/cities/fullMap.jpg';
 	import { mapInfo } from '../../stores/index';
-	import image2 from '../../../static/favicon.png';
+	// import image2 from '../../../static/favicon.png';
 
 	const DEFAULT_ZOOM = 5;
 	const DEFAULT_LNG = 37.015;
