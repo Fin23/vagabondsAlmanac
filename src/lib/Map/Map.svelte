@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	// import * as _ from 'lodash';
 	// import { session } from '$app/stores';
 	import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
