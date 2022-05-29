@@ -1,5 +1,5 @@
 import adapter from '@sveltejs/adapter-auto';
-import preprocess from 'svelte-preprocess';
+// import preprocess from 'svelte-preprocess';
 // import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -7,9 +7,9 @@ const config = {
 	extension: ['.svelte', '.svx'],
 	preprocess: [
 		// mdsvex(),
-		preprocess({
-			scss: { includePaths: ['src', 'node_modules'] }
-		})
+		// preprocess({
+		// 	scss: { includePaths: ['src', 'node_modules'] }
+		// })
 	],
 
 	kit: {
