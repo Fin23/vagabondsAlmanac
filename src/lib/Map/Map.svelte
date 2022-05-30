@@ -21,9 +21,9 @@
 				},
 				properties: {
 					title: 'Mapbox',
-					description: 'Kisbee.',
+					description: 'Kisbee',
 					notes:
-						'1st main city of the heroes, leader: Anas, son vaylor currently in a dark magic coma caused by Zehir an ancient demon thirsty for freedom'
+						'1st main city of the heroes, ransacked by a hored or Were-Jackles in order to kidnap the local leaders son and a precious magical relic, the leader: Anas, kidnapped son: Vaylor who was rescued by the party but is now currently in a dark magic coma caused by Azmodious and an ancient demon thirsty for freedom'
 				}
 			},
 			{
@@ -96,6 +96,9 @@
 	let map;
 	let innerWidth;
 	let show = false;
+	// let capital = geojson.features[0];
+	// $: capital;
+	let mainPoint = { type: 'FeatureCollection', features: [geojson.features[0]] };
 
 	let click = () => {
 		show = !show;
@@ -111,15 +114,21 @@
 			zoom: 4.5
 		});
 
+		/////////////////////////////////////////////////////////	/////////////////
+
+		///////////////////////////////////////////////////////////////////////////
+
 		map.on('load', async () => {
-			console.log('map data == ', mapData);
 			// add markers to map
 			// Add a GeoJSON source with 3 points.
 			map.addSource('points', {
 				type: 'geojson',
 				data: geojson
 			});
-
+			map.addSource('mainPoint', {
+				type: 'geojson',
+				data: mainPoint
+			});
 			// Add a circle layer
 			map.addLayer({
 				id: 'circle',
@@ -132,6 +141,32 @@
 					'circle-stroke-color': '#ffffff'
 				}
 			});
+
+			let locations = geojson.features;
+			// console.log('locations == ', locations);
+			locations.forEach((cities) => {
+				// console.log('cities', cities);
+				if (cities.properties.description === 'Kisbee') {
+					// capital = cities;
+					// setTimeout(() => {
+					map.addLayer({
+						id: 'kisbee',
+						type: 'circle',
+						source: 'mainPoint',
+						paint: {
+							'circle-color': 'green',
+							'circle-radius': 10,
+							'circle-stroke-width': 3,
+							'circle-stroke-color': 'red'
+						}
+					});
+					// }, 500);
+
+					// console.log('capital', capital);
+					// console.log('main point ', mainPoint);
+				}
+			});
+
 			//////////////////////////////////////
 			// Center the map on the coordinates of any clicked circle from the 'circle' layer.
 			map.on('click', 'circle', (e) => {
@@ -151,12 +186,15 @@
 				const popup = new mapboxgl.Popup({ offset: [0, -15] })
 					.setLngLat(feature.geometry.coordinates)
 					.setHTML(
-						`<p > 
+						`<div class="p-4 bg-[#171c1e] border-4 border-[#deba6f]  ">
+						<p class='text-red-500 font-bold text-lg'> 
 						${feature.properties.description}
 						</p>
 					
-					<p>
-						${feature.properties.notes}</p>`
+					<p class='text-white text-md'>
+						${feature.properties.notes}</p>
+						</div>
+						`
 					)
 					.addTo(map);
 			});
@@ -191,4 +229,7 @@
 </div>
 
 <style language="postcss">
+	.city {
+		@apply text-[#deba6f]-400 color-[#171c1e];
+	}
 </style>
